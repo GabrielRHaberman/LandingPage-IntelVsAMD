@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+:root{
+    --lefft-bg-color: rgba(255, 102, 0, 0.616);
+    --lefft-btn-color: rgb(255, 111, 0);
+    --right-bg-color: rgba(0, 60, 255, 0.502);
+    --right-btn-color: rgb(12, 0, 183);
+    --hover-width: 75%;
+    --other-widht: 25%;
+    --speed: 1000ms;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1{
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    white-space: norap;
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border:  white solid 0.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left{
+    background-image: url(https://m.media-amazon.com/images/I/610Rt4BtEWL._AC_SL1500_.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: all var(--speed) ease-in-out;
+}
+
+.split.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--lefft-bg-color)
+}
+
+.split.left .btn:hover{
+    background-color: var(--lefft-btn-color);
+    border-color: var(--lefft-btn-color);
+}
+
+.split.right{
+    background: url(https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/b/x/bx8070811900k2.jpg);
+    right: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all var(--speed) ease-in-out;
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+.split.right .btn:hover{
+    background-color: var(--right-btn-color);
+    border: var(--right-btn-color);
+}
+
+.hover-left .left{
+    width: var(--hover-width);
+}
+
+.hover-right .left{
+    width: var(--other-widht);
+}
+
+.hover-left .right{
+    width: var(--other-widht);
+}
+
+.hover-right .right{
+    width: var(--hover-width);
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+@media (max-width: 800px) {
+    h1{
+        font-size: 2rem;
+        top:30%
+}
+
+    .btn{
+        padding: 1.2rem;
+        width: 12rem;
+    }
+
+}
